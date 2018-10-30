@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="A" style="width:300px;height:300px;background:red;position:relative;">
+    <div id="B" style="width:200px;height:200px;background:green;position:relative;top:50px;margin:auto;">
+    <div id="C" style="width:100px;height:100px;background:blue;position:relative;top:50px;margin:auto;"></div>
+</div>
+</div>
+
+    <script>
+        var A = document.getElementById("A");
+        var B = document.getElementById("B");
+        var C = document.getElementById("C");
+        
+        // 目标（目标阶段的处理函数，先注册先执行）
+        C.addEventListener('click',function(){alert("Ct");},true);
+        C.addEventListener('click',function(){alert("Cf");},false);
+
+        // 事件冒泡
+        A.addEventListener('click',function(){alert("Af");},false);
+        B.addEventListener('click',function(){alert("Bf");},false);
+
+        // 事件捕获
+        A.addEventListener('click',function(){alert("At");},true);
+        B.addEventListener('click',function(){alert("Bt");},true);
+    </script>
+</body>
+</html>
