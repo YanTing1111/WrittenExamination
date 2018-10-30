@@ -1,5 +1,6 @@
 /** 
  * 判断一个字符串中出现次数最多的字母
+ * 
 */
 function maxCount(str) {
     var obj = {};
